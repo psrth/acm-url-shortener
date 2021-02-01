@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#29263e">
+
+    <title>mcow.ml</title>
+    <meta name="title" content="mcow.ml">
+    <meta name="description" content="A simple, secure, and open-source URL shortener!">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bitsacm.in/">
+    <meta property="og:title" content="bitsacm.in">
+    <meta property="og:description" content="A simple, secure, and open-source URL shortener!">
+    <meta property="og:image" itemprop="image" content="/bits.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://bitsacm.in/">
+    <meta property="twitter:title" content="bitsacm.in">
+    <meta property="twitter:description" content="A simple, secure, and open-source URL shortener!">
+    <meta property="twitter:image" content="/bits.png">
+
+    <link href="/index.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/jdq7cig.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <main>
+        <div class="flex">
+
+            <div class="form-and-title">
+                    <div class="heading">
+                         <a href="/" id="home">
+                            <h1>BITS ACM</h1>
+                         </a>
+                         <h2>URL Shortener</h2>
+                    </div>
+                <form action="/shorten" method="POST">
+                    <div class="long">
+                        <label for="long">ENTER URL TO SHORTEN</label>
+                        <input required type="url" placeholder="Enter long URL" name="long" id="long">
+                    </div>
+                    <div class="short">
+                        <label for="short">CUSTOMISE BACK HALF</label>
+                        <input type="text" placeholder="mcow.ml/" name="short" id="short">
+                        <% if (doErrorsExist) {%>
+                        <p class="error"><%= errors %></p>
+                        <%}%>
+                        </div>
+                        <BR><BR>
+
+                        <div class="button">
+                            <button type="submit">SHORTEN</button>
+                        </div>
+                    </form>
+                </div>
+
+                <% if (hasUrlBeenShortened && !doErrorsExist) {%>
+                        <div class="output" id="output">
+                            <h1><a href=<%= shortenedURL %>><%= shortened %></a><i id="copy" class="far fa-copy"
+                                    data-clipboard-target="#link"></i></h1>
+                        </div>
+
+                        <!-- Link placeholder to copy from -->
+                        <p id="link"><%= shortenedURL %></p>
+                        <% } %>
+
+                        <footer>
+                            <p>made by <a class="footer-link" href="https://bitsacm.in" target="_blank">BITS ACM</a>.</p>
+                            <p>code available on <a class="footer-link" href="https://github.com/psrth/acm-url-shortener"
+                                    target="_blank">github</a>.
+                            </p>
+                        </footer>
+                    </div>
+    </main>
+    <script src="clipboard.min.js"></script>
+
+    <script src="copy.js"></script>
+
+</html>

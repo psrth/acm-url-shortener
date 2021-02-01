@@ -12,7 +12,7 @@ services:
     volumes:
       - mongodb_data_container:/data/db
   server:
-    container_name: "pathways_server"
+    container_name: "shortener_server"
     build: .
     env_file: .env
     ports:

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#29263e">
 
-    <title>mcow.ml</title>
-    <meta name="title" content="mcow.ml">
+    <title>ACM URL Shortener</title>
+    <meta name="title" content="ACM URL Shortener">
     <meta name="description" content="A simple, secure, and open-source URL shortener!">
 
     <!-- Open Graph / Facebook -->
@@ -49,13 +49,15 @@
                     </div>
                     <div class="short">
                         <label for="short">CUSTOMISE BACK HALF</label>
-                        <input type="text" placeholder="mcow.ml/" name="short" id="short">
+                        <input type="text" placeholder="bitsacm.in/" name="short" id="short">
                         <% if (doErrorsExist) {%>
                         <p class="error"><%= errors %></p>
                         <%}%>
                         </div>
-                        <BR><BR>
 
+                        <div class="captcha-container">
+                            <div data-theme="dark" class="g-recaptcha" data-sitekey="6LfTw7cZAAAAAJc8y0lPCEdIbM72Pf7CWpt3ziPf"></div>
+                        </div>
                         <div class="button">
                             <button type="submit">SHORTEN</button>
                         </div>
@@ -67,7 +69,6 @@
                             <h1><a href=<%= shortenedURL %>><%= shortened %></a><i id="copy" class="far fa-copy"
                                     data-clipboard-target="#link"></i></h1>
                         </div>
-
                         <!-- Link placeholder to copy from -->
                         <p id="link"><%= shortenedURL %></p>
                         <% } %>
@@ -81,6 +82,7 @@
                     </div>
     </main>
     <script src="clipboard.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <script src="copy.js"></script>
 

@@ -70,12 +70,24 @@ function isEmpty(str) {
 
 // TO-DO: Refactor
 app.post("/shorten", createAccountLimiter, async (req, res) => {
+	const secret_key = process.env.SECRET_KEY;
+	const token = req.body["g-recaptcha-response"];
+	const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${token}`;
 
+	const data = {
+		secret_key,
+		token,
+	};
 
 	try {
+		const response = await fetch(url, {
+			method: "post",
+			body: JSON.stringify(data),
+		});
 
+		const responseJSON = await response.json();
 
-		if (true) {
+		if (responseJSON.success) {
 			let doErrorsExist = false;
 			let errors = "";
 
@@ -114,8 +126,8 @@ app.post("/shorten", createAccountLimiter, async (req, res) => {
 			}
 
 			let hasUrlBeenShortened = true;
-			let shortenedURL = `https://www.mcow.ml/${short}`;
-			let shortened = `mcow.ml/${short}`;
+			let shortenedURL = `https://www.bitsacm.in/${short}`;
+			let shortened = `bitsacm.in/${short}`;
 
 			res.render("index", {
 				doErrorsExist,
@@ -165,5 +177,5 @@ app.get("/:slug", async (req, res) => {
 });
 
 // Set PORT for production and local
-const PORT = process.env.PORT || 5265;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, console.log(`Server started on port ${PORT}`));

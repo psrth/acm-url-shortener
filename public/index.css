@@ -1,3 +1,7 @@
+*{
+	font-family: Roboto, sans-serif;
+}
+
 html {
 	height: -webkit-fill-available;
 	height: 100%;
@@ -49,14 +53,16 @@ main {
 }
 
 input {
+	color:  #5691f0;
 	width: 94%;
+	color:  #5691f0;
 	border: none;
 	border-radius: 12px;
 	padding: 10px 10px;
 	background-color: #E5E5E5;
 	margin: 5px 0 0px 0;
-	color:  #5691f0;
-	font-family: Roboto;
+	
+	font-family: Roboto, sans-serif;
 	font-size: 1rem;
 }
 
@@ -73,20 +79,20 @@ input {
 ::-webkit-input-placeholder {
 	/* Edge */
 	color: #fff;
-	font-family: Roboto;
+	font-family: Roboto, sans-serif;
 	font-size: 1rem;
 }
 
 :-ms-input-placeholder {
 	/* Internet Explorer 10-11 */
 	color: #fff;
-	font-family: Roboto;
+	font-family: Roboto, sans-serif;
 	font-size: 1rem;
 }
 
 ::placeholder {
 	color: #fff;
-	font-family: Roboto;
+	font-family: Roboto, sans-serif;
 	font-size: 1rem;
 }
 
@@ -181,7 +187,7 @@ button {
 	border: none;
 	background-color: #95BEFF;
 	color:  #fff;
-	font-family: "canada-type-gibson";
+	font-family: Roboto, sans-serif;
 	font-size: 1rem;
 	margin: auto;
 	padding: 12px 15px 10px 15px;

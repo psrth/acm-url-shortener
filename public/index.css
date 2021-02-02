@@ -1,5 +1,6 @@
 *{
 	font-family: Roboto, sans-serif;
+	color: #5691f0;
 }
 
 html {
@@ -59,9 +60,9 @@ input {
 	border: none;
 	border-radius: 12px;
 	padding: 10px 10px;
-	background-color: #E5E5E5;
+	background-color: #cfcfcf;
 	margin: 5px 0 0px 0;
-	
+	font-weight: 500;
 	font-family: Roboto, sans-serif;
 	font-size: 1rem;
 }
@@ -170,7 +171,7 @@ form {
 }
 
 h1 a:hover {
-	color: white;
+	color: #5691f0;
 	transition: 0.3s ease all;
 }
 

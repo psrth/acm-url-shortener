@@ -126,7 +126,7 @@ app.post("/shorten", createAccountLimiter, async (req, res) => {
 			}
 
 			let hasUrlBeenShortened = true;
-			let shortenedURL = `https://www.bitsacm.in/${short}`;
+			let shortenedURL = `https://bitsacm.in/${short}`;
 			let shortened = `bitsacm.in/${short}`;
 
 			res.render("index", {
